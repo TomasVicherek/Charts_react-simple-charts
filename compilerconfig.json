@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "css/site.css",
+    "inputFile": "css/site.less"
+  },
+  {
+    "outputFile": "css/less/bootstrap.css",
+    "inputFile": "css/less/bootstrap.less"
+  }
+]

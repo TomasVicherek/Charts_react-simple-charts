@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script src="scripts/jquery-3.1.1.js"></script>
+    <script src="scripts/jquery.signalR-2.2.2.js"></script>
+    <script src="signalr/hubs"></script>
+    <script src="scripts/react.js"></script>
+    <script src="scripts/react-dom.js"></script>
+    <script src="jsx/SinglePageScenario.js"></script>
+</head>
+<body>
+    <div class="mypanel">TopLevel</div>
+
+    <div id="here" class="container "></div>
+    <script type="text/javascript">
+        var h = $.connection.scenarioHub;
+
+        $.connection.hub.start().done(function () {
+            h.server.get('172FD3D6-DED6-4AEC-8F3F-CA63C34F6E3B').done(function (data) {
+                RenderPage("here", data);
+            });
+        }
+        );
+
+        // $(() => RenderPage("here"));
+    </script>
+</body>
+
+</html>
